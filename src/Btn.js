@@ -1,5 +1,6 @@
 import { useState as st } from 'react';
 import PropTypes from 'prop-types';
+import styles from './Btn.module.css';
 
 function Btn({ banana, big, click }) {
     const children = (banana === undefined) ? "save!" : banana;
@@ -11,14 +12,11 @@ function Btn({ banana, big, click }) {
         });
     }
 
+    //css module 사용전 코드
     return (
         <button
+            className={styles.Button}
             style={{
-                color: 'white',
-                backgroundColor: 'tomato',
-                border: 0,
-                borderRadius: 10,
-                padding: "10px 20px",
                 fontSize: big ? 30 : undefined,
             }}
             onClick={click ? onClick : undefined}
